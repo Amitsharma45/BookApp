@@ -1,0 +1,9 @@
+#allbooks-container {
+    min-height: 100vh;
+    padding-top: 3rem;
+}
+
+#explore-heading {
+    font-weight: 600;
+    padding-bottom: 2rem;
+}

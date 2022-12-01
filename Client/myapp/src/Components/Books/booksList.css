@@ -1,0 +1,27 @@
+#books-container {
+    background-color: #F2F4F5;
+    border-top: 1px solid #ACACAC;
+    padding-top: 2rem;
+    min-height: 340px;
+}
+
+h3 {
+    padding-left: 0.5rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+#category {
+    display: flex;
+    align-items: center;
+}
+
+#explore-btn {
+    text-align: right;
+}
+
+#explore-btn a {
+    text-decoration: none;
+    font-weight: 600;
+}

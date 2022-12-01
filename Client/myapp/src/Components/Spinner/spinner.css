@@ -1,0 +1,8 @@
+#spinner {
+    min-height: 50vh;
+}
+
+#spinner-border {
+    height: 3rem;
+    width: 3rem;
+}

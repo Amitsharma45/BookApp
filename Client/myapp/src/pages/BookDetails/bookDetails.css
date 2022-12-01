@@ -1,0 +1,30 @@
+#details-container {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    min-height: 90vh;
+    word-wrap: break-word;
+}
+
+#details-img {
+    width: 200px;
+    height: 285px;
+    margin-top: 0.5rem;
+}
+
+#details-container .col-md-8 p {
+    margin-block-end: 0.5rem;
+    margin-block-start: 0.75rem;
+    font-size: 14px;
+    text-align: justify;
+}
+
+h6 {
+    font-weight: 600;
+}
+
+#add-fav-btn {
+    width: 200px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    margin-top: 1rem;
+}

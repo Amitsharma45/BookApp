@@ -1,0 +1,83 @@
+.fav-btn-r{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: red;
+    background-color: #F2F4F5;
+    border: 2px solid red;
+    height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fav-btn-r:hover {
+    color: #FFFFFF;
+    background-color: red;
+}
+
+
+#books {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+.book-card {
+    height: 330px;
+    max-width: 200px;
+    border: none;
+    background-color: #F2F4F5;
+    text-align: left;
+}
+
+.book-covers {
+    width: 165px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.book-title {
+    max-height: 80px;
+    padding: 12px 2px;
+    font-size: 14px;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.book-title a {
+    text-decoration: none;
+    color: #000;
+    padding-right: 5px;
+    width: 124px;
+    justify-content: space-between;
+}
+
+.book-title a:hover {
+    color: #1B65A7;
+}
+
+.fav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #1B65A7;
+    background-color: #F2F4F5;
+    border: 2px solid #1B65A7;
+    height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fav-btn:hover {
+    color: #FFFFFF;
+    background-color: #1B65A7;
+}
+
+.fa-heart {
+    display: flex;
+    align-items: center;
+    padding: 12px 8px 11px 9px;
+}

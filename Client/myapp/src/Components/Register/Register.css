@@ -1,0 +1,49 @@
+.form1 {
+    width: 400px;
+}
+
+label {
+    margin: 5px 0;
+}
+
+.bgimg {
+    
+    height: 450px;
+    width: 550px;
+}
+
+.form {
+    width: 400px
+}
+
+.colheight {
+    height: 90vh;
+}
+
+.err {
+    color: red;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .bgimg {
+        
+        height: 350px;
+        width: 350px;
+    }
+
+    .form {
+        width: 350px
+    }
+
+    .colheight {
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width :1000px) {
+    .colheight {
+        height: auto;
+    }
+}

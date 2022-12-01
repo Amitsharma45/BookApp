@@ -1,0 +1,187 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Search feature API",
+        "description": "API developed in ExpressJS to fetch data related to books and authors from OpenLibrary API",
+        "version": "1.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "host": "localhost:8000",
+    "basePath": "/api",
+    "paths": {
+        "/getWorks/author": {
+            "get": {
+                "x-swagger-router-controller": "searchController",
+                "tags": [
+                    "Get all books by an author"
+                ],
+                "description": "Returns all books written by an author after fetching data from the third party API",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "author",
+                        "description": "Name of the author to find the books",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The number of books to fetch at a time",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The number of books to skip before starting to collect the result set",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/getWorks/title": {
+            "get": {
+                "x-swagger-router-controller": "searchController",
+                "tags": [
+                    "Get all books by a title"
+                ],
+                "description": "Returns all books having similar title after fetching data from the third party API",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "title",
+                        "description": "Title of the book to find",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The number of books to fetch at a time",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The number of books to skip before starting to collect the result set",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/getWorks/subject": {
+            "get": {
+                "x-swagger-router-controller": "searchController",
+                "tags": [
+                    "Get all books by a subject"
+                ],
+                "description": "Returns all books of the subject after fetching data from the third party API",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "subject",
+                        "description": "Subject of the book to find",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The number of books to fetch at a time",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The number of books to skip before starting to collect the result set",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/getDetails": {
+            "get": {
+                "x-swagger-router-controller": "searchController",
+                "tags": [
+                    "Get book details"
+                ],
+                "description": "Returns complete details of a book after fetching data from the third party API",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "key",
+                        "description": "Key of the book to find",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/getName": {
+            "get": {
+                "x-swagger-router-controller": "searchController",
+                "tags": [
+                    "Get author name"
+                ],
+                "description": "Returns name of an author after fetching data from the third party API",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "key",
+                        "description": "Key of the author to find",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+#status {
+    font-size: 130px;
+    line-height: 132px;
+    font-weight: 700;
+    margin-top: 5rem;
+    margin-bottom: 0;
+}
+
+#not-found {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#not-found-msg {
+    margin-bottom: 5rem;
+}

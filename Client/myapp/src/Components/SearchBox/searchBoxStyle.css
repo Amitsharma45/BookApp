@@ -1,0 +1,69 @@
+/*
+    light blue: ##E3F2FD,
+    cobalt: #025091
+    Cobalt blue: #1B65A7
+    Ultramarine blue: #4C76E2
+    light grey: #F2F4F5
+    dark grey: #ACACAC
+*/
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+.search-container {
+    min-height: 350px;
+    background-image: linear-gradient(#E3F2FD, #F2F4F5);
+}
+
+#heading {
+    text-align: center;
+    color: #1B65A7;
+}
+
+#heading h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 72px;
+    margin-top: 3rem;
+}
+
+#heading p {
+    padding-top: 1rem;
+    font-size: 1.25rem;
+}
+
+#search-box {
+    margin: auto;
+    max-width: 800px;
+}
+
+#search-btn {
+    width: 64px;
+    background-color: #1B65A7;
+    border: 1px solid #1B65A7;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+}
+
+#search-field {
+    border: 1px solid #ACACAC;
+    border-radius: 0;
+    padding: 0.75rem;
+}
+
+#search-filter {
+    border: 1px solid #ACACAC;
+    border-radius: 0;
+    padding: 0.75rem 0.25rem 0.75rem 0.75rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+option {
+    background-color: #FFFFFF;
+}
+
+.fas {
+    color: #FFFFFF;
+}
