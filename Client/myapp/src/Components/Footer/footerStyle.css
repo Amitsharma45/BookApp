@@ -6,4 +6,7 @@
     align-items: center;
     min-height: 50px;
     padding-top: 1rem;
+    position: absolute;
+    bottom: 0;
 }
+

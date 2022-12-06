@@ -39,15 +39,7 @@ function Profile() {
                     onSubmit={async (values) => {
                         try {
                             var token = document.cookie.split('=')[1];
-                            const { data } = await axios.put(config.apiUrlchangeProfile, values, {
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    'Authorization': token
-
-                                }, withCredentials: true
-                            });
-                            setrealod(true)
-                            setchangeProfile(false)
+                            token = localStorage.getItem('jwt');
                             toast.success('Your Profile Update Successfully', {
                                 position: "top-center",
                                 autoClose: 3000,
@@ -57,6 +49,17 @@ function Profile() {
                                 draggable: true,
                                 progress: undefined,
                             });
+                            setchangeProfile(false)
+                            const { data } = await axios.put(config.apiUrlchangeProfile, values, {
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    'Authorization': token
+
+                                }, withCredentials: true
+                            });
+                            setrealod(true)
+                            
+                            
                         } catch {
                             // alert("User  email already exists");
                         }

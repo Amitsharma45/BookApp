@@ -6,9 +6,10 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const cors = require('cors');
 const logger = require('morgan');
-const URI = process.env.MONGODB_SERVER;
 const { router } = require('./Routes/favRouter')
 
+// const URI = process.env.MONGODB_SERVER;
+const URI = 'mongodb+srv://mongoadmin:amit1234@cluster0.ny6ohvf.mongodb.net/?retryWrites=true&w=majority';
 app.use(cors({
     origin: true,
     credentials: true,

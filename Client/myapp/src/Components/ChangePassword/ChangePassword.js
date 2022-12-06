@@ -48,13 +48,6 @@ function ChangePassword() {
           validationSchema={SignupSchema}
           onSubmit={async (values) => {
             try {
-              var token = document.cookie.split('=')[1];
-              const { data } = await axios.put(config.apiUrlchangepassword, values, {
-                headers: {
-                  "Content-Type": "application/json",
-                  'Authorization': token
-                }, withCredentials: true
-              });
               toast.success('Your Password Change Successfully', {
                 position: "top-center",
                 autoClose: 3000,
@@ -63,6 +56,13 @@ function ChangePassword() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
+              });
+              var token = document.cookie.split('=')[1];
+              const { data } = await axios.put(config.apiUrlchangepassword, values, {
+                headers: {
+                  "Content-Type": "application/json",
+                  'Authorization': token
+                }, withCredentials: true
               });
             } catch {
               toast.error('Incorrect Current Password', {

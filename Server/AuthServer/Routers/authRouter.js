@@ -5,11 +5,8 @@ const passportLocal = require('passport-local');
 const { login, register, profile, changePassword, forgetPassword, logout  , isAuthenticated ,updateProfile ,CreateOTP ,VerifyOTP} = require("../Controllers/authController");
 const  { isLoginMiddleware ,VerifyTokenMiddleware } = require('../Middleware/middlewares')
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('../swagger.json');
 
-router.use('/api-docs', swaggerUi.serve);
-router.get('/api-docs', swaggerUi.setup(swaggerDocument));
+
 
 router.get('/profile', VerifyTokenMiddleware, profile);
 router.post('/login',passport.authenticate('local'),login);

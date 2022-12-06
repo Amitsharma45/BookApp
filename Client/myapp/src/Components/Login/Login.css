@@ -5,7 +5,14 @@
 label {
     margin: 5px 0;
 }
-
+.lo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+    z-index: 1;
+}
 .bgimg {
     
     height: 450px;

@@ -9,9 +9,11 @@ import { Link } from "react-router-dom";
 import bgimg from '../11070.jpg'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import React from 'react';
-
+import { Oval } from 'react-loader-spinner'
+import { useNavigate } from "react-router-dom";
+import { BookAppData } from '../Context/BookContext';
 const SignupSchema = Yup.object().shape({
     firstName: Yup.string()
         .min(2, 'Too Short!')
@@ -34,11 +36,16 @@ const SignupSchema = Yup.object().shape({
     }).required('Required')
 });
 const Register = () => {
+    const { setisAuthenticated } = React.useContext(BookAppData);
     const [showPassword, setShowPassword] = React.useState(true);
     const [confshowPassword, setConfShowPassword] = React.useState(true);
-
+    const [loading, setloading] = React.useState(true);
+    let navigate = useNavigate();
     return (
         <Row style={{ margin: '0', padding: '0', }} >
+            <div className='lo' style={{ visibility: !loading ? 'visible' : 'hidden' }}>
+                <Oval color="#000" height={80} width={80} />
+            </div>
             <Col md={12} lg={6} className="d-flex justify-content-center align-items-center colheight"  >
                 <img src={bgimg} className='bgimg' />
             </Col>
@@ -54,16 +61,38 @@ const Register = () => {
                     validationSchema={SignupSchema}
                     onSubmit={async (values) => {
                         try {
-                            const { data } = await axios.post(config.apiUrlregister, values);
-                            toast.success(data.message, {
-                                position: "top-center",
-                                autoClose: 2000,
-                                hideProgressBar: false,
-                                closeOnClick: true,
-                                pauseOnHover: true,
-                                draggable: true,
-                                progress: undefined,
-                            });
+                            if (loading) {
+                                setloading(false);
+                                const  d  = await axios.post(config.apiUrlregister, values);
+                                toast.success(d.data.message, {
+                                    position: "top-center",
+                                    autoClose: 1500,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                });
+                                setloading(true);
+                                const { data } = await axios.post(config.apiUrlLogin, values, {
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    }, withCredentials: true
+                                });
+                                localStorage.setItem("jwt", data.token);
+                                // console.log(data)
+                                setisAuthenticated(true);
+                                toast.success('Logged In', {
+                                    position: "top-center",
+                                    autoClose: 2000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                });
+                                navigate('/');
+                            }
                         } catch {
                             toast.error('User  email already exists', {
                                 position: "top-center",
@@ -74,6 +103,7 @@ const Register = () => {
                                 draggable: true,
                                 progress: undefined,
                             });
+                            setloading(true);
                         }
                     }}
                 >

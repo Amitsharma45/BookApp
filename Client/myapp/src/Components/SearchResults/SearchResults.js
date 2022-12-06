@@ -15,7 +15,7 @@ function SearchResults(props) {
             setLoading(true);
             if (props.option === "1") {
                 try {
-                    const { data } = await axios.get(`http://localhost:5000/api/getWorks/title?title=${props.search}&limit=24&offset=0`);
+                    const { data } = await axios.get(`http://localhost:8000/api/getWorks/title?title=${props.search}&limit=24&offset=0`);
                     setBooks(data.worksData);
                     setPageCount(Math.ceil(data.work_count / 24));
                 } catch (error) {
@@ -24,7 +24,7 @@ function SearchResults(props) {
             }
             else if (props.option === "2") {
                 try {
-                    const { data } = await axios.get(`http://localhost:5000/api/getWorks/author?author=${props.search}&limit=24&offset=0`);
+                    const { data } = await axios.get(`http://localhost:8000/api/getWorks/author?author=${props.search}&limit=24&offset=0`);
                     setBooks(data.worksData);
                     setPageCount(Math.ceil(data.work_count / 24));
                 } catch (error) {
@@ -33,7 +33,7 @@ function SearchResults(props) {
             }
             else {
                 try {
-                    const { data } = await axios.get(`http://localhost:5000/api/getWorks/subject?subject=${props.search}&limit=24&offset=0`);
+                    const { data } = await axios.get(`http://localhost:8000/api/getWorks/subject?subject=${props.search}&limit=24&offset=0`);
                     setBooks(data.worksData);
                     setPageCount(Math.ceil(data.work_count / 24));
                 } catch (error) {
@@ -49,15 +49,15 @@ function SearchResults(props) {
     const getBooksByOffset = async () => {
         setLoading(true);
         if (props.option === "1") {
-            const { data } = await axios.get(`http://localhost:5000/api/getWorks/title?title=${props.search}&limit=24&offset=${offset}`);
+            const { data } = await axios.get(`http://localhost:8000/api/getWorks/title?title=${props.search}&limit=24&offset=${offset}`);
             setBooks(data.worksData);
         }
         else if (props.option === "2") {
-            const { data } = await axios.get(`http://localhost:5000/api/getWorks/author?author=${props.search}&limit=24&offset=${offset}`);
+            const { data } = await axios.get(`http://localhost:8000/api/getWorks/author?author=${props.search}&limit=24&offset=${offset}`);
             setBooks(data.worksData);
         }
         else {
-            const { data } = await axios.get(`http://localhost:5000/api/getWorks/subject?subject=${props.search}&limit=24&offset=${offset}`);
+            const { data } = await axios.get(`http://localhost:8000/api/getWorks/subject?subject=${props.search}&limit=24&offset=${offset}`);
             setBooks(data.worksData);
         }
         setLoading(false);

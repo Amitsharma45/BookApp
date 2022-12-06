@@ -12,7 +12,7 @@ function BooksList(props) {
     useEffect(() => {
         const getBooks = async () => {
             setLoading(true);
-            const { data } = await axios.get(`http://localhost:5000/api/getWorks/subject?subject=${props.category}&limit=6&offset=0`);
+            const { data } = await axios.get(`http://localhost:8000/api/getWorks/subject?subject=${props.category}&limit=6&offset=0`);
             setBooks(data.worksData);
             setLoading(false);
         }

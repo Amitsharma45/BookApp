@@ -14,7 +14,7 @@ function ExploreMore(props) {
     useEffect(() => {
         const getBooks = async () => {
             setLoading(true);
-            const { data } = await axios.get(`http://localhost:5000/api/getWorks/subject?subject=${props.category}&limit=24&offset=0`);
+            const { data } = await axios.get(`https://bookappsearchserver.herokuapp.com/api/getWorks/subject?subject=${props.category}&limit=24&offset=0`);
             setBooks(data.worksData);
             setPageCount(Math.ceil(data.work_count / 24));
             setLoading(false);
@@ -24,7 +24,7 @@ function ExploreMore(props) {
 
     const getBooksByOffset = async () => {
         setLoading(true);
-        const { data } = await axios.get(`http://localhost:5000/api/getWorks/subject?subject=${props.category}&limit=24&offset=${offset}`);
+        const { data } = await axios.get(`https://bookappsearchserver.herokuapp.com/api/getWorks/subject?subject=${props.category}&limit=24&offset=${offset}`);
         setBooks(data.worksData);
         setLoading(false);
     }
