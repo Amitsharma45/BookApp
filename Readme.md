@@ -19,3 +19,21 @@ To run this project :-
 
 
 
+
+## 🔗 Links
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/amit-sharma-047434177/)
+
+
+
+## Tech Stack
+
+**Client:** React, Bootstrap, React-Bootstrap, Material Ui, 
+
+**Server:** Node, Express , MongoDb, Passport JS
+
+
+## Project Design Architecture
+
+![Image](https://drive.google.com/file/d/1l24BUF9zTOKpqwqas0ituoyjzOfX2vPB/view)
+
