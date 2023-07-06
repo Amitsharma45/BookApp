@@ -35,5 +35,5 @@ To run this project:-
 
 ## Project Design Architecture
 
-![Image]((https://github.com/Amitsharma45/BookApp/blob/master/Book%20App.jpg))
+![Image](Book%20App.jpg)
 
