@@ -17,12 +17,12 @@ function BookDetails() {
     useEffect(() => {
         const getDetails = async () => {
             setLoading(true);
-            const { data } = await axios.get(`http://localhost:5000/api/getDetails?key=${key}`);
+            const { data } = await axios.get(`http://localhost:8000/api/getDetails?key=${key}`);
             setDetails(data);
             if (data.authors.length !== 0) {
                 data.authors.forEach(async (item) => {
                     let key = item.author.key.substring(9);
-                    const { data } = await axios.get(`http://localhost:5000/api/getName?key=${key}`);
+                    const { data } = await axios.get(`http://localhost:8000/api/getName?key=${key}`);
                     if (authors.indexOf(data) === -1)
                         setAuthors(prevAuthors => [...prevAuthors, data]);
                 })

@@ -10,6 +10,7 @@ function Navbar() {
     async function logout() {
         var token = document.cookie;
         document.cookie = token + "=;expires=" + new Date(0).toUTCString();
+        localStorage.clear();
         setisAuthenticated(false);
         setUserData([]);
         toast.success('Logout ', {

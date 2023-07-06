@@ -12,6 +12,7 @@ const GetData = (props) => {
 
     useEffect(() => {
         var token = document.cookie.split('=')[1];
+        token = localStorage.getItem('jwt');
         async function getprofile() {
             try {
                 const { data } = await axios.get(config.apiUrlProfile, {
@@ -24,7 +25,7 @@ const GetData = (props) => {
                 setUserData(data);
             }
             catch {
-                
+                // console.log('errr')
             }
         }
         async function isAuth() {

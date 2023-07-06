@@ -14,27 +14,40 @@ const cookieParser = require('cookie-parser')
 app.use(cookieParser());
 
 app.use(cors({
-    origin: true,
+    origin:true,
     credentials: true,
 }));
 
-// const URI = 'mongodb://localhost:27017/BookApp';
-const URI = process.env.MONGODB_SERVER;
+const URI = 'mongodb+srv://mongoadmin:amit1234@cluster0.ny6ohvf.mongodb.net/?retryWrites=true&w=majority';
+// const URI = process.env.MONGODB_SERVER;
 // session store in mongodb
 const store = MongoDBStore({
     uri: URI,
     collection: 'booksession'
 })
+app.set("trust proxy", 1);
 
 app.use(session({
     secret: 'this is passport',
     saveUninitialized: false,
     resave: false,
     cookie: {
-        maxAge: 6000000
+        maxAge: 6000000,
+        sameSite: process.env.NODE_ENV === "production" ? 'none' : 'lax', // must be 'none' to enable cross-site delivery
+        secure: process.env.NODE_ENV === "production"// must be true if sameSite='none'
     },
     store: store
 }));
+
+// app.use(function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+//     res.header(
+//       "Access-Control-Allow-Headers",
+//       "Origin, X-Requested-With, Content-Type, Accept"
+//     );
+//     next();
+// });
 // mongodb connection
 mongoose.connect(URI);
 mongoose.connection.once('open', () => {
