@@ -1,13 +1,13 @@
 
 # Book App
 
-To run this project :-
+To run this project:-
 
-* First Fork then repositorie in your Github account then clone it.
+* First Fork then repository in your Github account then clone it.
 
-* Run npm i command in myapp folder to install node_modules for Front-end.
-* Run npm i command in AuthServer, FavServer, and search-server folder to install node_modules for backend.
-* After that start node server for Front-end and also start node server for all 3 backend service.
+* Run the npm i command in my app folder to install node_modules for Front-end.
+* Run the npm i command in AuthServer, FavServer, and search-server folder to install node_modules for the backend.
+* After that start the node server for Front-end and also start the node server for all 3 backend services.
 
 * Front-end is running on [localhost:3000](http://localhost:3000/)
 
@@ -15,7 +15,7 @@ To run this project :-
 
 * Favorite server is running on [localhost:5001](http://localhost:5001/)
 
-* Seacrh Server is running on [localhost:5003](http://localhost:5003/)
+* Search Server is running on [localhost:5003](http://localhost:5003/)
 
 
 
@@ -30,10 +30,10 @@ To run this project :-
 
 **Client:** React, Bootstrap, React-Bootstrap, Material Ui, 
 
-**Server:** Node, Express , MongoDb, Passport JS
+**Server:** Node, Express, MongoDB, Passport JS
 
 
 ## Project Design Architecture
 
-![Image](https://drive.google.com/file/d/1l24BUF9zTOKpqwqas0ituoyjzOfX2vPB/view)
+![Image]((https://github.com/Amitsharma45/BookApp/blob/master/Book%20App.jpg))
 
